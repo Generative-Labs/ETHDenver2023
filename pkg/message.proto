@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+
+message Web3MQCommonMessage {
+    bytes payload = 1;
+    string contentTopic = 2;
+    uint32 version = 3;
+    string comeFrom = 4;
+    string fromSign = 5;
+    string payloadType = 6;
+    string cipherSuite = 7;
+    bool needStore = 8;
+    uint64 timestamp = 9;
+    string messageId = 10;
+    string messageType = 11;
+    string nodeId = 12;
+
+    // signing key <-> pubkey
+    string validatePubKey = 13;
+
+    map<string, string> extraData = 14;
+
+    string threadId = 15;
+    string replyId = 16;
+}
+
+
+
+message MessageItem {
+    string messageId = 1;
+    uint32 version = 2;
+    bytes payload = 3;
+    string payloadType = 4;
+    string comeFrom = 5;
+    string fromSign = 6;
+    string contentTopic = 7;
+    string cipherSuite = 8;
+    uint64 timestamp = 9;
+    bool read = 10;
+    uint64 readTimestamp = 11;
+    string messageType = 12;
+}
+
+message Web3MQMessageListResponse {
+    repeated MessageItem data = 1;
+}

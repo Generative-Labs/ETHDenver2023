@@ -1,0 +1,9 @@
+websockets
+python-dotenv
+discord
+protobuf
+httpx
+cryptography
+web3
+eth-abi
+ujson

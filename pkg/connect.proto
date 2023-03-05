@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+
+// DApp connect command
+message DAppConnectCommand {
+    string NodeID = 1;
+    string DAppID = 2;
+    uint64 Timestamp = 3;
+    string Signature = 4;
+
+    // dapp signing key <-> pubkey  base64 encode
+    string ValidatePubKey = 5;
+}
+
+
+message DAppConnectResp {
+    string NodeID = 1;
+    string DAppID = 2;
+    uint64 Timestamp = 3;
+    int32 StatusCode = 4; // 200 success      400 failure
+    string StatusMsg = 5; // success / invalid request
+}
